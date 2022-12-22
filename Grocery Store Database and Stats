@@ -1,0 +1,44 @@
+#Check out my store front Database 
+CREATE TABLE store (id integer primary key, name TEXT, quantity integer, color TEXT, price integer);
+
+INSERT INTO store VALUES (1, "shirt", 3, "blue", 5);
+
+INSERT INTO store VALUES (2, "dress", 4, "red", 8);
+
+INSERT INTO store VALUES (3, "pants", 5, "green", 9);
+
+INSERT INTO store VALUES (4, "jacket", 6, "yellow", 10); 
+
+INSERT INTO store VALUES (5, "tie", 6, "purple", 9);
+
+INSERT INTO store VALUES (6, "cuff", 8, "indigo", 3);
+
+INSERT INTO store VALUES (7, "shirt", 3, "blue", 5);
+
+INSERT INTO store VALUES (8, "dress", 4, "red", 8);
+
+INSERT INTO store VALUES (9, "t-shirt", 5, "green", 10);
+
+INSERT INTO store VALUES (10, "shoes", 9, "yellow", 10); 
+
+INSERT INTO store VALUES (11, "socks", 10, "white", 11); 
+
+INSERT INTO store VALUES (12, "skully", 11, "orange", 15); 
+
+INSERT INTO store VALUES (13, "shiesty", 14, "black", 19);
+
+INSERT INTO store VALUES (14, "candy", 45, "teal", 50); 
+
+INSERT INTO store VALUES (15, "jewelry", 90, "gold", 300);
+
+#After the creation of the database, I ordered the pricing in ascending order. I also got the sum
+
+SELECT * FROM store;
+
+SELECT * FROM store 
+WHERE price >= 3
+ORDER BY price asc;
+
+SELECT SUM(price) FROM store;
+
+SELECT MAX(price) FROM store;
