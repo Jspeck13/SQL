@@ -1,0 +1,63 @@
+CREATE TABLE celebrities (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, age INTEGER, occupation TEXT);
+
+
+INSERT INTO celebrities (name, age, occupation) VALUES ("Denzel Washington", 62, "actor");
+
+INSERT INTO celebrities (name, age, occupation) VALUES ("Taye Diggs", 57, "actor");
+
+INSERT INTO celebrities (name, age, occupation) VALUES ("Nia Long", 59, "actor");
+
+INSERT INTO celebrities (name, age, occupation) VALUES ("Kelly Rowland", 48, "singer");
+
+INSERT INTO celebrities (name, age, occupation) VALUES ("Lebron James", 38, "athlete");
+
+
+INSERT INTO celebrities (name, age, occupation) VALUES ("Tiger Woods", 39, "athlete"); 
+
+INSERT INTO celebrities (name, age, occupation) VALUES ("Tom Hanks", 55, "actor");
+
+CREATE TABLE hobbies (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, person_id INTEGER);
+
+INSERT INTO hobbies (name, person_id) VALUES ("basketball", 1);
+
+INSERT INTO hobbies (name, person_id) VALUES ("shopping", 2);
+
+INSERT INTO hobbies (name, person_id) VALUES ("humming", 3);
+
+INSERT INTO hobbies (name, person_id) VALUES ("running", 5);
+
+INSERT INTO hobbies (name, person_id) VALUES ("swimming", 6);
+
+INSERT INTO hobbies (name, person_id) VALUES ("eating", 2);
+
+CREATE TABLE dogs (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT);
+
+INSERT INTO dogs (name) VALUES ("Rottwieler"); 
+
+INSERT INTO dogs (name) VALUES ("Doberman");
+
+INSERT INTO dogs (name) VALUES ("Mutt");
+
+INSERT INTO dogs (name) VALUES ("Lab");
+
+INSERT INTO dogs (name) VALUES ("German Shepard");
+
+INSERT INTO dogs (name ) VALUES ("St Bernard");
+
+INSERT INTO dogs (name) VALUES ("Pittbull");
+
+INSERT INTO dogs (name) VALUES ("Terrier");
+
+SELECT celebrities.name, celebrities.occupation, celebrities.age, hobbies.name, hobbies.person_id FROM celebrities
+JOIN hobbies 
+ON celebrities.id = hobbies.id;
+
+SELECT celebrities.name, dogs.name FROM celebrities LEFT OUTER JOIN dogs 
+ON celebrities.id = dogs.id;
+
+SELECT a.name, b.name 
+FROM hobbies 
+JOIN celebrities a 
+ON a.id = hobbies.id 
+JOIN celebrities b 
+ON b.id = hobbies.person_id;
